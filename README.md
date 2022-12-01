@@ -323,8 +323,7 @@ Criar gravar e ler arquivos I/O
 
 **Banco de dados JDBC, DataSet, Sql no Groovy**  
 Incluir no path da IDE(Intellij) o driver de BD:  hsqldb.jar
-
-AQUI VAI IMG  
+![](img/hsqldb-install.png)
 Erro : user lacks privilege or object not found
 Causa: foi informado “mem” em vez de “file” no path para o Banco de dados e o banco estava em arquivo “file” e não em memoria “mem”
 Solução: Alterar o URL para file
@@ -362,6 +361,7 @@ Deve ser acrescentado no projeto o arquivo jar **groovy-all.jar, que se encontra
 
 Adicionando Groovy em projetos existentes
 Clicar em cima do nome do projeto com botão direito -> configure -> Convert to groovy project
+![](img/prjToGroovy.png)
 
 Isso ira adicionar os jars e o plugin do groovy em qualquer tipo de projeto Java.
 
