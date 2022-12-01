@@ -72,9 +72,9 @@ manutenção de soluções de software e suas respectivas arquiteturas.
 - Semelhante ao POJO do Java, mas com caracteristicas proprias
 - visibilidade public é padrão para classe e metodos, não precisa digitar.
 - Todos atributos da classe é private por padrão
-– Java é estática(validada em tempo de compilação) e fortemente  tipada.
+– Java é estática(validada em tempo de compilação) e fortemente  tipada.  
 
-##Conceitos Groovy
+## Conceitos Groovy
 **Construct Names Arguments**  
 – Gera dinamicamente todas as combinações de construtores em forma de mapa. Permitindo atribuir valores 
 padrões  para cada atributo da classe.
@@ -172,8 +172,8 @@ Permite herança multipla, sobreposição e polimorfismo(Sobrecarga e sobreposi�
 são tipos de polimorfismo).  
 Ver: conflito de herança múltiplas, http://www.groovy-lang.org/objectorientation.html#_traits
 
-##Criando dinamicamente com  Groovy.  
-###1. ATS Transformations  
+## Criando dinamicamente com  Groovy.  
+### 1. ATS Transformations  
       Trechos de códigos com base em anotations  inseridos de forma dinâmica  
       **@ToString** – sobreposição automática do método  toString()  
 
@@ -216,7 +216,7 @@ atributos
 
 
   
-###2. Operador def
+### 2. Operador def
 - Utilizado para criar objetos de tipo indeterminado.
 - O objeto assume varias tipagens diferente ao longo da execução da solução.
 - Utilizado para passagem de parâmetros e retorno de métodos.
@@ -226,7 +226,7 @@ atributos
 – Utilizado para trabalhar com coleções de objetos sem tipo, de tipagem dinamica que 
  usam def
   
-###3. Closures  
+### 3. Closures  
  Programação funcional é um paradigma de desenvolvimento de software que visualiza a computação como uma avaliação de funções matemáticas e que evita estado ou dados mutáveis.
 
 - é anônimo sem nome
@@ -252,13 +252,13 @@ QUANDO USAR CLOSURE
 Closure não foram feitas para substituir um método de um objeto, elas foram criadas para encapsular pedaços de códigos pequenos e focados em executar “mini tarefas rotineiras” que não justifiquem se criar um objeto para isso. Podem ser utilizadas para fazer implementações dinâmicas para se encaixar em design patterns gerais.  
   
 
-##4. Metaprogramação (MOP)
+## 4. Metaprogramação (MOP)
 Em Groovy o metaclass pode ser alterado, e fica na memoria HEALP dentro do próprio objeto. Representando por um objeto chamado MetaClass;
 Pode ser dinamicamente alterado através da propriedade “metaclass”.  
 
 Dinamicamente é possível alterar a classe durante a execução da solução. É rápido, produtivo, dinâmico e flexível.
 
-###5 opções de recursos para fazer metaprogramação
+### 5 opções de recursos para fazer metaprogramação
 1. ExpandoMetaClass
 2. Categoriees
 3. Mixins
@@ -286,7 +286,7 @@ VO(value objetc), DTO (data tranfer object) .
 
 
 
-##GDK – Groovy Development Kit
+## GDK – Groovy Development Kit
 **Objetivo**  
 Retirar o DRY, facilitar, automatizar rotinas repetitivas, burocráticas,
 verbosas e trabalhosas que os programadores Java sempre tinham que fazer ao utilizar
