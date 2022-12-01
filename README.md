@@ -332,7 +332,7 @@ Solução: Alterar o URL para file
 **API Collections (List, Map e Set)**  
 No groovy otimiza, traz mais rapidez e conveniências através do uso de closures
 
-
+ 
 
 
 
