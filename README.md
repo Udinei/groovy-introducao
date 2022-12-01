@@ -63,10 +63,10 @@ manutenção de soluções de software e suas respectivas arquiteturas.
 ### Evitando o DRY
 - Pacotes lang do java já são todos importados automaticamente
 - Todo tipo primitivo sera mapeado o para classe Wapper equivalente
-- Todo float ou double são  convertidos para BigDecimal
-  println 12l.class.name – cria BigDecimal (com o l apos o literal)
+- Todo `float` ou `double` são  convertidos para `BigDecimal`
+  `println 12l.class.name` cria BigDecimal (com o l apos o literal)
 - Tipagem na compilação não garante que um objeto tenha determinado comportamento
-println 11g.class.name – criar BigInteger (com o g apos o literal)  
+`println 11g.class.name` – criar BigInteger (com o g apos o literal)  
 
 ### POGO  
 - Semelhante ao POJO do Java, mas com caracteristicas proprias
@@ -76,49 +76,55 @@ println 11g.class.name – criar BigInteger (com o g apos o literal)
 
 ##Conceitos Groovy
 **Construct Names Arguments**  
-– Gera dinamicamente todas as combinações de construtores em forma de mapa. Permitindo atribuir valores padrões  para cada atributo da classe.
+– Gera dinamicamente todas as combinações de construtores em forma de mapa. Permitindo atribuir valores 
+padrões  para cada atributo da classe.
 
 **Subscript Operator**  
-– Acessa e manipula os atributos de um objetos (via métodos get e set), de forma dinâmica(bind), utilizado para gerar estruturas dinâmicas.
-Cliente c = new Cliente(nome: “fernando”, data: new Date())
-Lendo um valor do objeto c[“nome”] em vez de c.getNome ou c[“nome”] = “Udinei”
+– Acessa e manipula os atributos de um objetos (via métodos get e set), de forma dinâmica(bind), utilizado para gerar estruturas dinâmicas.  
+    `Cliente c = new Cliente(nome: “fernando”, data: new Date())`  
+
+Lendo um valor do objeto:  
+`c[“nome”] em vez de c.getNome ou c[“nome”] = “Udinei”`
 
 **Direct Field Acess Operator**  
 – Acessa os atributos da classe diretamente ex: Objeto.atributo  
 O groovy faz um get ou set internamente, ele não acessa diretamente o atributo private.
 
 **Operador as**
-– usado para criar alias para usar jar de terceiros nos imports, reduzir tamanho de nomes de libs de terceiros etc..
-Ex:
-import classes.Cliente as Xu
-Uso:
-Xu c = new Xu(nome: “Udinei”)
+– usado para criar alias para usar jar de terceiros nos imports, reduzir tamanho de nomes de libs de terceiros etc...  
+Ex:  
+`import classes.Cliente as Xu`  
+Uso:  
+`Xu c = new Xu(nome: “Udinei”)`
 
 **Optional Parameters** 
 - utilizado para que o groovy preencha o parâmetro de um método com um valor padrão caso não seja passado nenhum valor.
 Grovy gera dinamicamente todas as sobrecargas do método necessárias, pra cumprir os parâmetros opcionais.
 
-Ex:
-double vender(double valor, int taxa = 10){
-double rs = valor * taxa / 100
-rs
-}
+Ex:  
+`double vender(double valor, int taxa = 10){`  
+ `double rs = valor * taxa / 100`
+ `rs`  
+`}`
 
 
 **Array Optional Parameter**  
-– utilizado para passar parâmetros de um  array de forma simples, utilizando simplesmente virgula em vez de um array. Groovy gera dinamicamente a criação do array e passagem correta do método
+– utilizado para passar parâmetros de um  array de forma simples, utilizando simplesmente virgula em vez de um array. 
+Groovy gera dinamicamente a criação do array e passagem correta do método
 
 **Safe Navegador Operator**  
-– utilizado para evitar NullPointerException quando das referencias para objetos “?”. Gera um if dinamicamente para testar se o objeto não esta  null e executa após o ? caso o método desejado caso não seja null. E não executa caso seja null.
-Ex:
+– utilizado para evitar `NullPointerException` quando das referencias para objetos `“?”`. Gera um `if`
+dinamicamente para testar se o objeto não esta  null e executa após o ? caso o método desejado caso não seja null. E não executa caso seja null.  
+Ex:  `
 objeto?.executar()
 objeto?.setNome(“nome”)
+` 
 
 **Spread Operator**  
-– Usado pra executar comportamento em blocos de coleções, usa o operador “safe ?” por padrão(semelhando ao for, while..). Não estoura exception caso um elemento da coleção esteja null.
-Ex:
-colecao*.metodoHaSerChamado() – executado em cada elemento da coleção
-coleção*.setNome(“bla”)
+– Usado pra executar comportamento em blocos de coleções, usa o operador `“safe ?”` por padrão(semelhando ao for, while..). Não estoura `Exception` caso um elemento da coleção esteja `null`.  
+Ex:  
+`colecao*.metodoHaSerChamado() – executado em cada elemento da coleção
+ coleção*.setNome(“bla”)`
 
 **Checked exceptions(exeção checadas)**  
 – São opcionais, não é necessário usar try/catch
@@ -129,17 +135,17 @@ Fica a cargo do programador usar try/catch. O código deve ser coberto por teste
 Regras: Valores padrão assumidos como verdadeiro    
 
 Type - Condition for truth (verdadeiro)  
-Boolean	- True  
-Collection -	Not empty  
-Character -	Value not 0  
-CharSequence - Length greather than 0  
-Enumeration	- Has more elements  
-Iterator - Has next  
-Number	Double  - value not 0  
-Map	- Not empty  
-Matcher	At - least one match  
-Object[] - Length greater than 0  
-Any other - type	Reference not null  
+Boolean	- `True`  
+Collection -	`Not empty`  
+Character -	`Value not 0`  
+CharSequence - `Length greather than 0`  
+Enumeration	- `Has more elements`  
+Iterator - `Has next`  
+Number	Double  - `value not 0`  
+Map	- `Not empty`  
+Matcher	At - `least one match`  
+Object[] - `Length greater than 0`  
+Any other type - `Reference not null`  
 
 **Operator OverLoading**  
 – utilizado para criar expressões de operadores matemáticos ou lógicos, com qualquer tipo de objeto.(melhora a expressividade e otimização), os métodos da tabela abaixo podem ser mapeados em um objeto.
@@ -166,7 +172,7 @@ Permite herança multipla, sobreposição e polimorfismo(Sobrecarga e sobreposi�
 são tipos de polimorfismo).  
 Ver: conflito de herança múltiplas, http://www.groovy-lang.org/objectorientation.html#_traits
 
-##Criando dinamicamente com  Groovy.
+##Criando dinamicamente com  Groovy.  
 ###1. ATS Transformations  
       Trechos de códigos com base em anotations  inseridos de forma dinâmica  
       **@ToString** – sobreposição automática do método  toString()  
@@ -209,7 +215,7 @@ atributos
 [Link para mais ATS transformtions:](https://www.groovy-lang.org/metaprogramming.html#_available_ast_transformations)
 
 
-
+  
 ###2. Operador def
 - Utilizado para criar objetos de tipo indeterminado.
 - O objeto assume varias tipagens diferente ao longo da execução da solução.
@@ -219,8 +225,8 @@ atributos
  **FOR-IN**   
 – Utilizado para trabalhar com coleções de objetos sem tipo, de tipagem dinamica que 
  usam def
-
-###3.	Closures  
+  
+###3. Closures  
  Programação funcional é um paradigma de desenvolvimento de software que visualiza a computação como uma avaliação de funções matemáticas e que evita estado ou dados mutáveis.
 
 - é anônimo sem nome
@@ -243,11 +249,10 @@ atributos
 
 **NOTA**:  
 QUANDO USAR CLOSURE  
-Closure não foram feitas para substituir um método de um objeto, elas foram criadas para encapsular pedaços de códigos pequenos e focados em executar “mini tarefas rotineiras” que não justifiquem se criar um objeto para isso. Podem ser utilizadas para fazer implementações dinâmicas para se encaixar em design patterns gerais.
+Closure não foram feitas para substituir um método de um objeto, elas foram criadas para encapsular pedaços de códigos pequenos e focados em executar “mini tarefas rotineiras” que não justifiquem se criar um objeto para isso. Podem ser utilizadas para fazer implementações dinâmicas para se encaixar em design patterns gerais.  
+  
 
-
-
-##4.	Metaprogramação (MOP)
+##4. Metaprogramação (MOP)
 Em Groovy o metaclass pode ser alterado, e fica na memoria HEALP dentro do próprio objeto. Representando por um objeto chamado MetaClass;
 Pode ser dinamicamente alterado através da propriedade “metaclass”.  
 
@@ -261,12 +266,12 @@ Dinamicamente é possível alterar a classe durante a execução da solução. �
 5. Compile time MOP
 
 - A Linguagem dinâmica Groovy permite criar em tempo de execução propriedades, métodos, construtores e sobrepor métodos existentes.
-Em java as informações de uma classe (metaclass) são carregadas no classloader da solução, e não podem ser alteradas.  
+- Em java as informações de uma classe (metaclass) são carregadas no classloader da solução, e não podem ser alteradas.  
 - O compilador garante que não sera executado coisas e comportamentos que a classe não consiga fazer 
 - Somente o objeto a partir do ponto da alteração conterá esses novos comportamentos.
 - Outros objetos da mesma classe não conterão as alterações somente o objeto em questão.
-- Métodos dinâmicos não parecem no 'code completion'.
-- Atributos dinâmicos não aparecem no 'code completion' e nem visualmente no ‘variables’ de depuração não consegue fazer (métodos e comportamentos)
+- Métodos dinâmicos não parecem no `code completion`.
+- Atributos dinâmicos não aparecem no `code completion` e nem visualmente no ‘variables’ de depuração não consegue fazer (métodos e comportamentos)
 - Podem ser inseridos dinamicamente métodos estáticos em classes, atributos static não podem ser criados dinamicamente no Groovy.
 - É possível fazer override de metodos sendo que os parâmetros devem ser do mesmo 
 tipo e na mesma sequencia, caso contrario o override não será aplicado e sim o overload.
@@ -274,7 +279,7 @@ tipo e na mesma sequencia, caso contrario o override não será aplicado e sim o
  **1 Classe Expando (Dinamic bean)**  
  Criada especificamente para ser utilizado de forma mutante, 
 para receber comportamentos dinâmicos em runtime. Com ela é possível criar objetos
-chamados de “dinamic bean” utilizando para modelar objetos dinâmicos ao longo da
+chamados de `dinamic bean` utilizando para modelar objetos dinâmicos ao longo da
 execução de uma solução Groovy. Evitando assim trabalho e burocracia tais como 
 VO(value objetc), DTO (data tranfer object) .
 
@@ -290,18 +295,19 @@ as API clássicas básicas do java.
 Acrescentou centenas de novos comportamentos que não existe em varias classes da JDK.
 
 Tais como:  
-java.lang.*, java.io.*, java.util.*, java.math.*, java.sql.*, java.servlet.*, etc..    
+`java.lang.*, java.io.*, java.util.*, java.math.*, java.sql.*, java.servlet.*, etc..`    
 
 **GDK possui recursos que facilita o uso de APIs: XML, JSON, SWING , HTML, etc...**
 - Novos metodos em classes existentes da JDK
 - novas classes, metodos de operator de overloading de classes JDK
 - Closure em classes existentes da JDK
 - Builder facilitadores de criação de objetos baseados em composições.
-- Classes “Facades” facilitadores de serviços
+- Classes `Facades` facilitadores de serviços
 
 **BigDecimal**  
-Em groovy pode ser manipulado como se fosse um tipo de dado primitivo, mais rápido, conciso e orientado a objeto
-Operadores: ==, +, *, -, +=, -=
+Em groovy pode ser manipulado como se fosse um tipo de dado primitivo, mais rápido, conciso e orientado 
+a objeto 
+Operadores:` ==, +, *, -, +=, -=`
 Equals, somar, multiplicar etc.
 
 **Loops no Groovy**  
