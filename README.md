@@ -367,3 +367,6 @@ Isso ira adicionar os jars e o plugin do groovy em qualquer tipo de projeto Java
 
 Inserindo o Groovy em projeto existente via intellij
 
+# Referências
+[Groovy F1 - Desenvolvedor Groovy - Fundamentos Básicos](https://www.udemy.com/course/groovy-f1/)
+[Groovy F2 - Desenvolvedor Groovy - Fundamentos Básicos](https://www.udemy.com/course/groovy-f2/)
